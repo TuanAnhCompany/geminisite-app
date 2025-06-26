@@ -147,20 +147,43 @@ Hãy cung cấp mã nguồn hoàn chỉnh của trang web trong các phần riê
 - Trang web phải hoạt động hoàn toàn
 - Bao gồm các tính năng tương tác nếu yêu cầu
 
-QUAN TRỌNG:
-- Nếu yêu cầu tạo đồ họa hoặc hiệu ứng động, ưu tiên sử dụng Canvas API hoặc Three.js
-- Đối với Canvas 2D, sử dụng thẻ <canvas> với context 2D
-- Đối với đồ họa 3D, sử dụng Three.js (đã được tích hợp sẵn)
+ĐẶC BIỆT QUAN TRỌNG VỀ CANVAS VÀ THREE.JS:
+- Nếu yêu cầu tạo đồ họa, biểu đồ hoặc hiệu ứng động, hãy ưu tiên sử dụng Canvas API hoặc Three.js
+- Đối với Canvas 2D:
+  * Sử dụng thẻ <canvas> với ID rõ ràng
+  * Đặt kích thước canvas bằng thuộc tính width và height
+  * Lấy context 2D trong một biến riêng
+  * Đặt code vẽ canvas trong một hàm riêng và gọi sau khi trang đã tải
+  * Sử dụng window.addEventListener('load', function() {...}) để đảm bảo canvas được vẽ sau khi trang tải xong
+  * Kiểm tra sự tồn tại của canvas trước khi vẽ: if(canvas && canvas.getContext)
+
+- Đối với biểu đồ ngôn ngữ lập trình:
+  * Tạo biểu đồ với màu sắc hấp dẫn và có chú thích rõ ràng
+  * Thêm hiệu ứng hover hoặc animation nếu có thể
+  * Đảm bảo kích thước biểu đồ phù hợp với màn hình
+  * Thêm chú thích phần trăm rõ ràng
+
+- Đối với đồ họa 3D với Three.js:
+  * Tạo một container div riêng cho Three.js scene
+  * Khởi tạo renderer, scene, camera trong các biến riêng
+  * Sử dụng window.addEventListener('resize', ...) để làm cho scene responsive
+  * Kiểm tra WebGL trước khi render: if(THREE.WEBGL.isWebGLAvailable())
+  * Sử dụng requestAnimationFrame cho animation
+  * Xử lý lỗi nếu WebGL không được hỗ trợ
+
 - Các thư viện sau đã được tải sẵn, bạn có thể sử dụng trực tiếp:
-  * Three.js phiên bản r159
+  * Three.js phiên bản r159 (đã có sẵn trong window.THREE)
   * p5.js phiên bản 1.9.0
   * Three.js OrbitControls và GLTFLoader
+  * Chart.js nếu cần biểu đồ phức tạp
 
 TRÁNH LỖI JAVASCRIPT:
 - Luôn kiểm tra null/undefined trước khi gọi phương thức của một đối tượng
 - Sử dụng try-catch để bắt lỗi trong quá trình thực thi
 - Đảm bảo tất cả các sự kiện đều được kiểm tra trước khi gọi addEventListener
 - Không sử dụng các API không được hỗ trợ rộng rãi
+- Đảm bảo thêm tất cả các thư viện cần thiết vào thẻ <head>
+- Đặt script JavaScript ở cuối body để đảm bảo DOM đã tải xong
 
 Vui lòng đảm bảo trang web tương thích với cả máy tính để bàn và thiết bị di động. Nếu làm đồ họa 3D, hãy luôn kiểm tra hỗ trợ WebGL.
 
@@ -273,20 +296,43 @@ Hãy tạo lại mã nguồn hoàn chỉnh của trang web với những thay đ
 - Mã nguồn vẫn sạch và được format tốt
 - Trang web vẫn hoạt động hoàn toàn
 
-QUAN TRỌNG:
-- Nếu yêu cầu tạo đồ họa hoặc hiệu ứng động, ưu tiên sử dụng Canvas API hoặc Three.js
-- Đối với Canvas 2D, sử dụng thẻ <canvas> với context 2D
-- Đối với đồ họa 3D, sử dụng Three.js (đã được tích hợp sẵn)
+ĐẶC BIỆT QUAN TRỌNG VỀ CANVAS VÀ THREE.JS:
+- Nếu yêu cầu tạo đồ họa, biểu đồ hoặc hiệu ứng động, hãy ưu tiên sử dụng Canvas API hoặc Three.js
+- Đối với Canvas 2D:
+  * Sử dụng thẻ <canvas> với ID rõ ràng
+  * Đặt kích thước canvas bằng thuộc tính width và height
+  * Lấy context 2D trong một biến riêng
+  * Đặt code vẽ canvas trong một hàm riêng và gọi sau khi trang đã tải
+  * Sử dụng window.addEventListener('load', function() {...}) để đảm bảo canvas được vẽ sau khi trang tải xong
+  * Kiểm tra sự tồn tại của canvas trước khi vẽ: if(canvas && canvas.getContext)
+
+- Đối với biểu đồ ngôn ngữ lập trình:
+  * Tạo biểu đồ với màu sắc hấp dẫn và có chú thích rõ ràng
+  * Thêm hiệu ứng hover hoặc animation nếu có thể
+  * Đảm bảo kích thước biểu đồ phù hợp với màn hình
+  * Thêm chú thích phần trăm rõ ràng
+
+- Đối với đồ họa 3D với Three.js:
+  * Tạo một container div riêng cho Three.js scene
+  * Khởi tạo renderer, scene, camera trong các biến riêng
+  * Sử dụng window.addEventListener('resize', ...) để làm cho scene responsive
+  * Kiểm tra WebGL trước khi render: if(THREE.WEBGL.isWebGLAvailable())
+  * Sử dụng requestAnimationFrame cho animation
+  * Xử lý lỗi nếu WebGL không được hỗ trợ
+
 - Các thư viện sau đã được tải sẵn, bạn có thể sử dụng trực tiếp:
-  * Three.js phiên bản r159
+  * Three.js phiên bản r159 (đã có sẵn trong window.THREE)
   * p5.js phiên bản 1.9.0
   * Three.js OrbitControls và GLTFLoader
+  * Chart.js nếu cần biểu đồ phức tạp
 
 TRÁNH LỖI JAVASCRIPT:
 - Luôn kiểm tra null/undefined trước khi gọi phương thức của một đối tượng
 - Sử dụng try-catch để bắt lỗi trong quá trình thực thi
 - Đảm bảo tất cả các sự kiện đều được kiểm tra trước khi gọi addEventListener
 - Không sử dụng các API không được hỗ trợ rộng rãi
+- Đảm bảo thêm tất cả các thư viện cần thiết vào thẻ <head>
+- Đặt script JavaScript ở cuối body để đảm bảo DOM đã tải xong
 
 Vui lòng đảm bảo trang web tương thích với cả máy tính để bàn và thiết bị di động. Nếu làm đồ họa 3D, hãy luôn kiểm tra hỗ trợ WebGL.
 
