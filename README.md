@@ -20,7 +20,6 @@
     <a href="#giấy-phép">Giấy Phép</a>
   </p>
   
-  <img src="https://i.imgur.com/Z3ayTUg.png" alt="GeminiSite Screenshot" width="80%">
 </div>
 
 ## 📋 Giới thiệu
@@ -29,7 +28,7 @@
 
 <p align="center">
   <a href="#" id="demo">
-    <img src="https://i.imgur.com/8wqN4vj.gif" alt="GeminiSite Demo" width="70%">
+    <img src="https://i.ibb.co/n865BNNH/image.png" alt="GeminiSite Demo" width="70%">
   </a>
 </p>
 
