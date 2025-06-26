@@ -1,0 +1,519 @@
+/* Override styles to ensure they are applied */
+:root {
+  --primary-color: #0ea5e9 !important;
+  --secondary-color: #0369a1 !important;
+  --accent-color: #f97316 !important;
+  --background-color: #f8fafc !important;
+  --card-bg: #ffffff !important;
+  --text-color: #0f172a !important;
+  --text-light: #64748b !important;
+  --border-color: #e2e8f0 !important;
+  --hover-color: #e0f2fe !important;
+  --feature-bg: #f0f9ff !important;
+  --code-bg: #f1f5f9 !important;
+  --danger-color: #ef4444 !important;
+}
+
+body {
+  background-color: var(--background-color) !important;
+  color: var(--text-color) !important;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;
+}
+
+.app {
+  max-width: 100% !important;
+  overflow-x: hidden !important;
+}
+
+.header {
+  background-color: #ffffff !important;
+  border-bottom: 1px solid var(--border-color) !important;
+  padding: 1rem 0 !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05) !important;
+}
+
+.logo {
+  font-size: 1.5rem !important;
+  font-weight: 700 !important;
+  color: var(--primary-color) !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.5rem !important;
+}
+
+.logo img {
+  height: 40px !important;
+  width: 40px !important;
+  border-radius: 8px !important;
+}
+
+.logo div {
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.logo-text {
+  font-size: 1.5rem !important;
+  font-weight: 700 !important;
+  line-height: 1.2 !important;
+}
+
+.logo-tagline {
+  font-size: 0.75rem !important;
+  color: var(--text-light) !important;
+}
+
+.prompt-container {
+  background-color: #ffffff !important;
+  border-radius: 8px !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) !important;
+  padding: 1.5rem !important;
+  margin: 1rem 0 !important;
+}
+
+.prompt-textarea {
+  width: 100% !important;
+  min-height: 120px !important;
+  padding: 0.75rem !important;
+  border: 1px solid var(--border-color) !important;
+  border-radius: 6px !important;
+  font-family: inherit !important;
+  font-size: 1rem !important;
+  resize: vertical !important;
+  transition: border-color 0.2s ease !important;
+}
+
+.prompt-textarea:focus {
+  outline: none !important;
+  border-color: var(--primary-color) !important;
+  box-shadow: 0 0 0 2px rgba(14, 165, 233, 0.2) !important;
+}
+
+.button {
+  background-color: var(--primary-color) !important;
+  color: white !important;
+  border: none !important;
+  border-radius: 6px !important;
+  padding: 0.75rem 1.5rem !important;
+  font-weight: 600 !important;
+  font-size: 1rem !important;
+  cursor: pointer !important;
+  transition: background-color 0.2s ease !important;
+}
+
+.button:hover {
+  background-color: var(--secondary-color) !important;
+}
+
+.button:disabled {
+  background-color: #cbd5e1 !important;
+  cursor: not-allowed !important;
+}
+
+.code-editor {
+  border-radius: 8px !important;
+  overflow: hidden !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) !important;
+}
+
+.preview-wrapper {
+  background-color: #ffffff !important;
+  border-radius: 8px !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) !important;
+  overflow: hidden !important;
+}
+
+.preview-controls {
+  padding: 0.75rem !important;
+  border-bottom: 1px solid var(--border-color) !important;
+  display: flex !important;
+  justify-content: center !important;
+}
+
+.device-switcher {
+  display: flex !important;
+  gap: 0.5rem !important;
+  background-color: var(--background-color) !important;
+  padding: 0.25rem !important;
+  border-radius: 6px !important;
+}
+
+.device-btn {
+  background: none !important;
+  border: none !important;
+  padding: 0.5rem !important;
+  border-radius: 4px !important;
+  cursor: pointer !important;
+  color: #64748b !important;
+  transition: all 0.2s ease !important;
+}
+
+.device-btn:hover {
+  background-color: var(--hover-color) !important;
+  color: var(--text-color) !important;
+}
+
+.device-btn.active {
+  background-color: #ffffff !important;
+  color: var(--primary-color) !important;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05) !important;
+}
+
+.preview-iframe-container {
+  background-color: #ffffff !important;
+}
+
+.tabs {
+  display: flex !important;
+  border-bottom: 1px solid var(--border-color) !important;
+  background-color: var(--background-color) !important;
+}
+
+.tab {
+  padding: 0.75rem 1.5rem !important;
+  border: none !important;
+  background: none !important;
+  cursor: pointer !important;
+  font-weight: 500 !important;
+  color: #64748b !important;
+  transition: all 0.2s ease !important;
+  border-bottom: 2px solid transparent !important;
+}
+
+.tab:hover {
+  color: var(--text-color) !important;
+}
+
+.tab.active {
+  color: var(--primary-color) !important;
+  border-bottom: 2px solid var(--primary-color) !important;
+}
+
+.content-area {
+  background-color: var(--background-color) !important;
+  padding: 2rem 0 !important;
+}
+
+.prompt-section, .preview-container {
+  background-color: var(--card-bg) !important;
+  border-radius: 0.75rem !important;
+  box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -2px rgba(0,0,0,0.1) !important;
+  padding: 2rem !important;
+  margin-bottom: 2rem !important;
+}
+
+.prompt-section h1 {
+  font-size: 1.75rem !important;
+  font-weight: 700 !important;
+  margin-bottom: 1rem !important;
+  color: var(--text-color) !important;
+}
+
+.btn {
+  border-radius: 0.5rem !important;
+  padding: 0.625rem 1.25rem !important;
+  font-size: 0.9375rem !important;
+  font-weight: 500 !important;
+  transition: all 0.2s !important;
+}
+
+.btn-primary {
+  background-color: var(--primary-color) !important;
+  color: white !important;
+}
+
+.btn-primary:hover {
+  background-color: var(--secondary-color) !important;
+}
+
+.btn-secondary {
+  background-color: white !important;
+  color: var(--text-color) !important;
+  border: 1px solid var(--border-color) !important;
+}
+
+.btn-danger {
+  background-color: var(--danger-color) !important;
+  color: white !important;
+}
+
+.btn-danger:hover {
+  background-color: #dc2626 !important;
+}
+
+.mode-switch {
+  display: flex !important;
+  gap: 0.5rem !important;
+  margin-bottom: 1rem !important;
+}
+
+.mode-btn {
+  background-color: #ffffff !important;
+  border: 1px solid var(--border-color) !important;
+  padding: 0.5rem 1rem !important;
+  border-radius: 6px !important;
+  font-weight: 500 !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+}
+
+.mode-btn:hover {
+  background-color: var(--hover-color) !important;
+}
+
+.mode-btn.active {
+  background-color: var(--primary-color) !important;
+  color: white !important;
+  border-color: var(--primary-color) !important;
+}
+
+.footer {
+  margin-top: 2rem !important;
+  padding: 1.5rem 0 !important;
+  border-top: 1px solid var(--border-color) !important;
+  text-align: center !important;
+  color: #64748b !important;
+  font-size: 0.875rem !important;
+}
+
+.footer-links {
+  margin-top: 0.5rem !important;
+  display: flex !important;
+  justify-content: center !important;
+  gap: 0.5rem !important;
+}
+
+.footer-links a {
+  color: var(--primary-color) !important;
+  text-decoration: none !important;
+  transition: color 0.2s ease !important;
+}
+
+.footer-links a:hover {
+  color: var(--secondary-color) !important;
+  text-decoration: underline !important;
+}
+
+.separator {
+  color: var(--border-color) !important;
+}
+
+/* Animation cho loading spinner */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loading {
+  animation: spin 1s linear infinite !important;
+}
+
+/* Styles mới cho phần features-highlight */
+.features-highlight {
+  background-color: var(--feature-bg) !important;
+  border-radius: 8px !important;
+  padding: 1.25rem !important;
+  margin: 1.5rem 0 !important;
+  border-left: 4px solid var(--primary-color) !important;
+}
+
+.features-highlight h3 {
+  margin-top: 0 !important;
+  margin-bottom: 0.75rem !important;
+  color: var(--primary-color) !important;
+  font-size: 1.1rem !important;
+}
+
+.features-highlight ul {
+  padding-left: 1.5rem !important;
+  margin-bottom: 1rem !important;
+}
+
+.features-highlight li {
+  margin-bottom: 0.5rem !important;
+}
+
+.example-prompt {
+  background-color: var(--code-bg) !important;
+  padding: 0.75rem !important;
+  border-radius: 4px !important;
+  font-style: italic !important;
+  margin-top: 0.75rem !important;
+  border-left: 2px solid var(--accent-color) !important;
+}
+
+/* Styles mới cho edit mode */
+.edit-info {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 1rem !important;
+  margin-bottom: 1.5rem !important;
+}
+
+.original-prompt-container {
+  background-color: var(--feature-bg) !important;
+  padding: 1rem !important;
+  border-radius: 8px !important;
+}
+
+.original-prompt-container h4 {
+  margin-top: 0 !important;
+  margin-bottom: 0.5rem !important;
+  color: var(--text-color) !important;
+  font-size: 0.9rem !important;
+  font-weight: 600 !important;
+}
+
+.original-prompt {
+  background-color: var(--code-bg) !important;
+  padding: 0.75rem !important;
+  border-radius: 4px !important;
+  font-size: 0.9rem !important;
+  white-space: pre-wrap !important;
+}
+
+/* Cải thiện hiển thị canvas */
+.preview-iframe-container canvas {
+  max-width: 100% !important;
+  height: auto !important;
+}
+
+.canvas-demo {
+  background-color: var(--card-bg) !important;
+  border: 1px solid var(--border-color) !important;
+  padding: 1rem !important;
+  border-radius: 8px !important;
+  margin: 1rem 0 !important;
+}
+
+/* Responsive cho canvas */
+@media (max-width: 768px) {
+  .canvas-container, .threejs-container {
+    height: auto !important;
+    max-height: 500px !important;
+  }
+}
+
+/* Styles cho danh sách websites */
+.websites-list {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)) !important;
+  gap: 1.5rem !important;
+  margin: 1.5rem 0 !important;
+}
+
+.website-item {
+  background-color: var(--card-bg) !important;
+  border-radius: 8px !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) !important;
+  padding: 1.25rem !important;
+  transition: all 0.2s ease !important;
+  border: 1px solid var(--border-color) !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.website-item:hover {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+  transform: translateY(-2px) !important;
+}
+
+.website-info {
+  flex: 1 !important;
+  margin-bottom: 1rem !important;
+}
+
+.website-info h3 {
+  margin-top: 0 !important;
+  margin-bottom: 0.5rem !important;
+  font-size: 1.1rem !important;
+  color: var(--primary-color) !important;
+}
+
+.website-info .prompt {
+  font-size: 0.9rem !important;
+  color: var(--text-color) !important;
+  margin-bottom: 0.75rem !important;
+  display: -webkit-box !important;
+  -webkit-line-clamp: 3 !important;
+  -webkit-box-orient: vertical !important;
+  overflow: hidden !important;
+}
+
+.website-info .date {
+  font-size: 0.8rem !important;
+  color: var(--text-light) !important;
+  margin-bottom: 0.25rem !important;
+}
+
+.website-actions {
+  display: flex !important;
+  gap: 0.5rem !important;
+  margin-top: auto !important;
+}
+
+.website-actions .button {
+  flex: 1 !important;
+  padding: 0.5rem !important;
+  font-size: 0.875rem !important;
+}
+
+.empty-state {
+  text-align: center !important;
+  padding: 3rem 1rem !important;
+  color: var(--text-light) !important;
+}
+
+.empty-state p {
+  margin-bottom: 1.5rem !important;
+  font-size: 1.1rem !important;
+}
+
+.loading-state {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 3rem 1rem !important;
+}
+
+.loading-state .loading {
+  width: 40px !important;
+  height: 40px !important;
+  border: 4px solid rgba(14, 165, 233, 0.3) !important;
+  border-radius: 50% !important;
+  border-top: 4px solid var(--primary-color) !important;
+  margin-bottom: 1rem !important;
+}
+
+.actions {
+  display: flex !important;
+  gap: 1rem !important;
+  margin-top: 1.5rem !important;
+}
+
+.code-editors {
+  margin-top: 2rem !important;
+}
+
+/* Container styles */
+.container {
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+  padding: 0 1.5rem !important;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .websites-list {
+    grid-template-columns: 1fr !important;
+  }
+  
+  .actions {
+    flex-direction: column !important;
+  }
+  
+  .prompt-section, .preview-container {
+    padding: 1.5rem !important;
+  }
+} 
