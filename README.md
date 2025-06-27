@@ -184,7 +184,7 @@ Dự án này được phân phối dưới giấy phép MIT. Xem file [`LICENSE
 ## 👨‍💻 Tác giả
 
 <p align="center">
-  <img src="https://avatars.githubusercontent.com/u/TuanAnhCompany" alt="Tuấn Anh Tricker" width="150" style="border-radius:50%">
+  <img src="https://i.ibb.co/Wv2PSWDp/photo-2025-06-27-22-52-36.jpg" alt="Tuấn Anh Tricker" width="150" style="border-radius:50%">
 </p>
 
 <div align="center">
